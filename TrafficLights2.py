@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 # Peter Normington
-# 2019-10-13
+# 2019-11-18
+# More correct implementation using inheritance
 
 from LEDBoard import *
 
