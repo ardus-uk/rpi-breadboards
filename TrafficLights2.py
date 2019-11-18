@@ -7,7 +7,6 @@
 from LEDBoard import *
 
 class TrafficLights2(LEDBoard):
-    pass
 
     def __init__(self):
         # Set up the board configuration
