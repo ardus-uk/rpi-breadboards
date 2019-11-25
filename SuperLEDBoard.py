@@ -26,7 +26,7 @@ if __name__ == '__main__':
     # Run until stopped by keyboard interrupt (Ctrl+C)
     try:
         while True:            
-            slb.test_all_leds(5,1)
+            peters_slb.test_all_leds(5,1)
     except (KeyboardInterrupt):
         print("\nTest stopped")
 
