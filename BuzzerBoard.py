@@ -6,15 +6,15 @@
 from gpiozero import Buzzer
 from time import sleep          
 
-class buzzerBoard:
-    def __init__(self,buzzer):
+class BuzzerBoard:
+    def __init__(self,pin_buzzer):
 
-        self.buzzer = buzzer
+        self.buzzer = pin_buzzer
         
         # buzzers are keyed by name
         self.buzzer = {}
-        for name,pin in self.buzzer.items():
-            self.buzzer[name]=buzzer(pin)
+        for name,pin in self.pin_buzzer.items():
+            self.buzzer[name]=Buzzer(pin)
     
     def test_buzzer(self,name):
         self.buzzer[name].on()
@@ -27,13 +27,14 @@ class buzzerBoard:
 
 # Test the class
 if __name__ == '__main__':
-    print("buzzer test program")
+    print("Buzzer test program")
     # Set up the board configuration
  
-    peters_buzzer = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+    peters_pin_buzzer = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
             "Buzzer1":20,
         }
-    petersboard = buzzerBoard(peters_buzzer)
+
+    petersboard = BuzzerBoard(peters_pin_buzzer)
     # Run the test
     print("Testing the buzzer...")
     petersboard.test_buzzer("Buzzer1")
