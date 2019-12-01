@@ -31,11 +31,11 @@ if __name__ == '__main__':
     # Set up the board configuration
  
     peters_pin_buzzer = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-            "Buzzer1":20,
+            "Whistle":20,
         }
 
     petersboard = BuzzerBoard(peters_pin_buzzer)
     # Run the test
     print("Testing the buzzer...")
-    petersboard.test_buzzer("Buzzer1")
+    petersboard.test_buzzer("Whistle")
     print("All done!")
