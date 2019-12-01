@@ -9,11 +9,11 @@ from time import sleep
 class buzzerBoard:
     def __init__(self,pin_buzzer):
 
-        self.pin_buzzer = pin_buzzer
+        self.buzzer = buzzer
         
         # buzzers are keyed by name
         self.buzzer = {}
-        for name,pin in self.pin_buzzer.items():
+        for name,pin in self.buzzer.items():
             self.buzzer[name]=buzzer(pin)
     
     def test_buzzer(self,name):
@@ -22,7 +22,7 @@ class buzzerBoard:
         self.buzzer[name].off()
 
     def test_all_buzzers(self):
-        for name in self.pin_buzzer.keys():
+        for name in self.buzzer.keys():
             self.test_buzzer(name)
 
 # Test the class
