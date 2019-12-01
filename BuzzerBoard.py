@@ -18,7 +18,7 @@ class BuzzerBoard:
     
     def test_buzzer(self,name):
         self.buzzer[name].on()
-        time.sleep(1)
+        sleep(1)
         self.buzzer[name].off()
 
     def test_all_buzzers(self):
