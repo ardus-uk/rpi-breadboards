@@ -7,7 +7,7 @@ from gpiozero import Buzzer
 from time import sleep          
 
 class buzzerBoard:
-    def __init__(self,pin_buzzer):
+    def __init__(self,buzzer):
 
         self.buzzer = buzzer
         
