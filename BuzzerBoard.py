@@ -9,7 +9,7 @@ from time import sleep
 class BuzzerBoard:
     def __init__(self,pin_buzzer):
 
-        self.buzzer = pin_buzzer
+        self.pin_buzzer = pin_buzzer
         
         # buzzers are keyed by name
         self.buzzer = {}
