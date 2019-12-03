@@ -10,5 +10,5 @@ buzzer_setup = {
 }
 
 my_bb = BuzzerBoard(buzzer_setup)
-my_bb.buzz(0.5)
+my_bb.buzz("Whistle",0.5)
 
