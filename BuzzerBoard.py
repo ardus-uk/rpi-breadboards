@@ -16,14 +16,14 @@ class BuzzerBoard:
         for name,pin in self.pin_buzzer.items():
             self.buzzer[name]=Buzzer(pin)
     
-    def test_buzzer(self,name):
+    def buzz(self,name,duration):
         self.buzzer[name].on()
-        sleep(1)
+        sleep(duration)
         self.buzzer[name].off()
 
     def test_all_buzzers(self):
         for name in self.buzzer.keys():
-            self.test_buzzer(name)
+            self.buzz(name,2)
 
 # Test the class
 if __name__ == '__main__':
@@ -36,6 +36,6 @@ if __name__ == '__main__':
 
     petersboard = BuzzerBoard(peters_pin_buzzer)
     # Run the test
-    print("Testing the buzzer...")
-    petersboard.test_buzzer("Whistle")
+    print("Testing the buzzers...")
+    petersboard.test_all_buzzers()
     print("All done!")
