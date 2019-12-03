@@ -4,6 +4,7 @@
 # 2019-12-03
 
 from BuzzerBoard import *
+from time import sleep
 
 buzzer_setup = {
     "Whistle":20,
@@ -12,5 +13,6 @@ buzzer_setup = {
 my_bb = BuzzerBoard(buzzer_setup)
 for i in range(1,5):
     my_bb.buzz("Whistle",i/10)
+    sleep(1)
 
 
