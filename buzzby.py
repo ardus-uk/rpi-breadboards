@@ -10,7 +10,7 @@ buzzer_setup = {
 }
 
 my_bb = BuzzerBoard(buzzer_setup)
-for i in range[1..5]:
+for i in range[1,5]:
     my_bb.buzz("Whistle",i/10)
 
 
