@@ -4,7 +4,7 @@ import os
 import time
 
 GPIO.setmode(GPIO.BCM)
-ButtonPin=11
+ButtonPin=17
 GPIO.setup(ButtonPin, GPIO.IN)
 print(GPIO.input(ButtonPin))
 while True:
@@ -14,5 +14,6 @@ while True:
         time.sleep(1)
     else:
         os.system('clear')
-        print("Waiting for a button press")    
+        print("Waiting for a button press")
+        print(GPIO.input(ButtonPin))   
     time.sleep(0.5)
