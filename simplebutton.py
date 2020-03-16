@@ -15,7 +15,7 @@ try:
             time.sleep(1)
         else:
             os.system('clear')
-            print("Waiting for a button press")
+            print("Waiting for a button press...Ctrl C to end")
             print(GPIO.input(ButtonPin))   
         time.sleep(0.5)
 except (KeyboardInterrupt):
