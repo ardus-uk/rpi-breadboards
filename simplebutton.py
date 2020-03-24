@@ -4,7 +4,7 @@ import os
 import time
 
 GPIO.setmode(GPIO.BCM)
-ButtonPin=17
+ButtonPin=27
 GPIO.setup(ButtonPin, GPIO.IN)
 print(GPIO.input(ButtonPin))
 try:
