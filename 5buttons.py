@@ -12,7 +12,7 @@ from ButtonBoard import *
             "White":23,
             "Blue":24,
             "Yellow":25,
-        }
+            }
 
 5buttons_board = ButtonBoard(5buttons_layout)
 5buttons_board.test_all_buttons()
