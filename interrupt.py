@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-         
+# https://raspi.tv/2013/how-to-use-interrupts-with-python-on-the-raspberry-pi-and-rpi-gpio-part-3       
 import RPi.GPIO as GPIO  
 GPIO.setmode(GPIO.BCM)  
       
