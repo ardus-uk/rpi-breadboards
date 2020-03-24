@@ -29,7 +29,7 @@ if __name__ == '__main__':
     # Set up the board configuration
  
     peters_pin_button = {                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-            "Master":21,
+            "Master":27,
         }
     petersboard = ButtonBoard(peters_pin_button)
     # Run the tests
