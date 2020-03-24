@@ -6,7 +6,7 @@
 
 from ButtonBoard import *
 
-5buttons_layout = {                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+five_buttons_layout = {                                                                                                                                                                                                                                                                                                                                                                                                                                                            
             "Green":27,
             "Red":22,
             "White":23,
@@ -14,5 +14,5 @@ from ButtonBoard import *
             "Yellow":25,
             }
 
-5buttons_board = ButtonBoard(5buttons_layout)
-5buttons_board.test_all_buttons()
+five_buttons_board = ButtonBoard(five_buttons_layout)
+five_buttons_board.test_all_buttons()
