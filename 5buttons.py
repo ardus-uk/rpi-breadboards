@@ -1,4 +1,4 @@
-import ButtonBoard
+from ButtonBoard import *
 
 5buttons_layout = [                                                                                                                                                                                                                                                                                                                                                                                                                                                            
             "Green":27,
