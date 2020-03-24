@@ -26,7 +26,7 @@ print ("You will also need a second button connected so that when pressed")
 print ("it will connect GPIO port 24 (pin 18) to 3V3 (pin 1)") 
 print ("You will also need a third button connected so that when pressed") 
 print ("it will connect GPIO port 17 (pin 11) to GND (pin 14)")
-raw_input("Press Enter when ready\n>")  
+input("Press Enter when ready\n>")  
       
 # when a falling edge is detected on port 17, regardless of whatever   
 # else is happening in the program, the function my_callback will be run  
