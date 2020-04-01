@@ -21,7 +21,7 @@ class UpInput:
         GPIO.setup(self.pin_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     # threaded callback functions will run in another thread when events are detected 
-    def call_back(self):
+    def call_back(self,channel):
         print ("\nFalling edge detected on " + str(self.pin_button)) 
 
     def add_event_detector(self, bounce_time):
