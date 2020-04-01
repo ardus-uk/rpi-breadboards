@@ -16,19 +16,19 @@ GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 # define two threaded callback functions  
 # which will run in another thread when events are detected  
 def my_callback(channel):  
-    print ("\nfalling edge detected on 17") 
+    print ("\nFalling edge detected on 17") 
   
 def my_callback2(channel):  
-    print ("\nfalling edge detected on 23")
+    print ("\nFalling edge detected on 23")
       
-print ("INSTRUCTIONS\n")
+print ("INSTRUCTIONS")
 print ("------------\n")
 print ("Make sure you have a button connected so that when pressed")
 print ("it will connect GPIO port 23 (pin 16) to GND (pin 6)\n")
-print ("You will also need a second button connected so that when pressed")     
-print ("it will connect GPIO port 24 (pin 18) to 3V3 (pin 1)") 
-print ("You will also need a third button connected so that when pressed") 
-print ("it will connect GPIO port 17 (pin 11) to GND (pin 14)")
+print ("You will also need a second button connected so that when pressed") 
+print ("it will connect GPIO port 17 (pin 11) to GND (pin 14)\n")
+print ("Finally, you will need a third button connected so that when pressed")     
+print ("it will connect GPIO port 24 (pin 18) to 3V3 (pin 1)\n") 
 input("Press Enter when ready\n>")  
       
 # when a falling edge is detected on port 17, regardless of whatever   
@@ -42,7 +42,7 @@ GPIO.add_event_detect(23, GPIO.FALLING, callback=my_callback2, bouncetime=300)
 try:  
     print ("\nWaiting for rising edge on port 24")  
     GPIO.wait_for_edge(24, GPIO.RISING)  
-    print ("Rising edge detected on port 24. Here endeth the third lesson.")   
+    print ("\nRising edge detected on port 24\n\n--- END OF PROGRAM ---\n.")   
 except KeyboardInterrupt:  
     GPIO.cleanup()       # clean up GPIO on CTRL+C exit  
 GPIO.cleanup()           # clean up GPIO on normal exit  
