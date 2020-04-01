@@ -16,17 +16,16 @@ class UpInput:
 # Wired to connect to GND on button press, 
 # so detect falling edge detection on each.
 
-    def __init__(self, pin_button, bouncetime):
+    def __init__(self, pin_button):
         self.pin_button = pin_button
-        self.bouncetime = bouncetime
         GPIO.setup(self.pin_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     # threaded callback functions will run in another thread when events are detected 
-    def callback(self):
+    def call_back(self):
         print ("\nFalling edge detected on " + str(self.pin_button)) 
 
-    def add_event_detector(self):
-        GPIO.add_event_detect(self.pin_button, GPIO.FALLING, callback=self.callback, bouncetime=self.bouncetime) 
+    def add_event_detector(self, bounce_time):
+        GPIO.add_event_detect(self.pin_button, GPIO.FALLING, callback=self.call_back, bouncetime=bounce_time) 
 
 print ("INSTRUCTIONS")
 print ("------------\n")
@@ -42,10 +41,10 @@ input("Press Enter when ready\n>")
 if __name__ == '__main__':
     # GPIO 24 set up as an input, pulled down, connected to 3V3 on button press  
     GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  
-    black = UpInput(17,300)
-    white = UpInput(23,300)
-    black.add_event_detector()
-    white.add_event_detector()
+    black = UpInput(17)
+    white = UpInput(23)
+    black.add_event_detector(300)
+    white.add_event_detector(300)
     try:  
         print ("\nWaiting for rising edge on port 24")  
         GPIO.wait_for_edge(24, GPIO.RISING)  
