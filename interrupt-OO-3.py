@@ -5,7 +5,7 @@
 
 # Object-oriented version of interrupt script
 
-from gpiozero import Buttons 
+from gpiozero import Button 
 
 def action1():
     print("Hello, world!\n")
