@@ -22,7 +22,8 @@ class UpInput:
 
     # threaded callback functions will run in another thread when events are detected 
     def call_back(self,channel):
-        print ("\nFalling edge detected on " + str(self.pin_button)) 
+        print ("\nFalling edge detected on " + str(self.pin_button)
+        print ("\nChannel = " + str(channel))
 
     def add_event_detector(self, bounce_time):
         GPIO.add_event_detect(self.pin_button, GPIO.FALLING, callback=self.call_back, bouncetime=bounce_time) 
@@ -49,6 +50,8 @@ if __name__ == '__main__':
         print ("\nWaiting for rising edge on port 24")  
         GPIO.wait_for_edge(24, GPIO.RISING)  
         print ("\nRising edge detected on port 24\n\n--- END OF PROGRAM ---\n.")   
-    except KeyboardInterrupt:  
-        GPIO.cleanup()       # clean up GPIO on CTRL+C exit  
-    GPIO.cleanup()           # clean up GPIO on normal exit  
+    except KeyboardInterrupt:
+        # clean up GPIO on CTRL+C exit
+        GPIO.cleanup()
+    # clean up GPIO on normal exit
+    GPIO.cleanup()             
