@@ -16,36 +16,49 @@ class UpInput:
 # Wired to connect to GND on button press, 
 # so detect falling edge detection on each.
 
-    def __init__(self, pin_button):
+    def __init__(self, pin_button, action_function):
         self.pin_button = pin_button
+        self.action_function = action_function
         GPIO.setup(self.pin_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     # threaded callback functions will run in another thread when events are detected 
     def call_back(self,channel):
-        print ("\nFalling edge detected on " + str(self.pin_button)
-        print ("\nChannel = " + str(channel))
+        print ("\nFalling edge detected on " + str(self.pin_button))
+        print ("Channel = " + str(channel))
+        self.action_function()
 
     def add_event_detector(self, bounce_time):
         GPIO.add_event_detect(self.pin_button, GPIO.FALLING, callback=self.call_back, bouncetime=bounce_time) 
 
-print ("INSTRUCTIONS")
-print ("------------\n")
-print ("Make sure you have a button connected so that when pressed")
-print ("it will connect GPIO port 23 (pin 16) to GND (pin 6)\n")
-print ("You will also need a second button connected so that when pressed") 
-print ("it will connect GPIO port 17 (pin 11) to GND (pin 14)\n")
-print ("Finally, you will need a third button connected so that when pressed")     
-print ("it will connect GPIO port 24 (pin 18) to 3V3 (pin 1)\n") 
-input("Press Enter when ready\n>")  
-      
 # Test the class
 if __name__ == '__main__':
+
+    def action1():
+        print("Hello, world!\n")
+        
+    
+    def action2():
+        print("Hello, universe!\n")
+
+    print ("INSTRUCTIONS")
+    print ("------------\n")
+    print ("Make sure you have a button connected so that when pressed")
+    print ("it will connect GPIO port 23 (pin 16) to GND (pin 6)\n")
+    print ("You will also need a second button connected so that when pressed") 
+    print ("it will connect GPIO port 17 (pin 11) to GND (pin 14)\n")
+    print ("Finally, you will need a third button connected so that when pressed")     
+    print ("it will connect GPIO port 24 (pin 18) to 3V3 (pin 1)\n") 
+    input("Press Enter when ready\n>")  
+
+
     # GPIO 24 set up as an input, pulled down, connected to 3V3 on button press  
     GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  
-    black = UpInput(17)
-    white = UpInput(23)
+    
+    black = UpInput(17, action1)
+    white = UpInput(23, action2)
     black.add_event_detector(300)
     white.add_event_detector(300)
+    
     try:  
         print ("\nWaiting for rising edge on port 24")  
         GPIO.wait_for_edge(24, GPIO.RISING)  
