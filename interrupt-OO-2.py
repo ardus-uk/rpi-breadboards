@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # interrupt-OO.py
 # Peter Normington
-# 2020-04-01
+# 2020-04-02
 
 # Object-oriented version of interrupt script
 # With grateful acknowledgement to 
