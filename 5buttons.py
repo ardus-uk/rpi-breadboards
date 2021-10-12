@@ -16,3 +16,4 @@ five_buttons_layout = {
 
 five_buttons_board = ButtonBoard(five_buttons_layout)
 five_buttons_board.test_all_buttons()
+five_buttons_board.test_button("Green")
