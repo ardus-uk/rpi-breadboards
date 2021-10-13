@@ -17,19 +17,18 @@ def actionb():
     print("Hello, black!\n")
 
 def stop_running():
-    print("STOP (Black) pressed!\n")
+    print("STOP (Red) pressed!\n")
     sys.exit()
 
-white_btn = Button(16, bounce_time = 2)
-#black_btn = Button(20)
-exit_btn = Button(20)
-#red_btn = Button(21)
+white_btn = Button(16, bounce_time=0.05)
+black_btn = Button(20, bounce_time=0.05)
+red_btn = Button(21, hold_time = 2)
 
 try:
     while True:
         white_btn.when_pressed = actionw
-       # black_btn.when_pressed = actionb
-        exit_btn.when_pressed = stop_running
+        black_btn.when_pressed = actionb
+        red_btn.when_held = stop_running
         #white_btn.when_released = action2
 except KeyboardInterrupt:
     print("\nEnding program run\n")
