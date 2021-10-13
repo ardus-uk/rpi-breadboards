@@ -21,14 +21,14 @@ def stop_running():
 
 white_btn = Button(16)
 #black_btn = Button(20)
-exit_btn = Button(20, hold_time=3)
+exit_btn = Button(20)
 #red_btn = Button(21)
 
 try:
     while True:
         white_btn.when_pressed = actionw
        # black_btn.when_pressed = actionb
-        exit_btn.when_held = stop_running
+        exit_btn.when_pressed = stop_running
         #white_btn.when_released = action2
 except KeyboardInterrupt:
     print("\nEnding program run\n")
