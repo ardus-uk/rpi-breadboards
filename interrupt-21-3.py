@@ -6,7 +6,7 @@
 # Object-oriented version of interrupt script
 
 from gpiozero import Button 
-import RPi.GPIO as GPIO  
+#import RPi.GPIO as GPIO  
 
 def action1():
     print("Hello, world!\n")
