@@ -17,6 +17,7 @@ def actionb():
     print("Hello, black!\n")
 
 def stop_running():
+    print("STOP (Black) pressed!\n")
     sys.exit()
 
 white_btn = Button(16)
