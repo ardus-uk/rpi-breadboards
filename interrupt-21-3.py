@@ -20,9 +20,16 @@ def stop_running():
     print("STOP (Red) pressed!\n")
     sys.exit()
 
+<<<<<<< HEAD
 white_btn = Button(16, bounce_time=0.05)
 black_btn = Button(20, bounce_time=0.05)
 red_btn = Button(21, hold_time = 2)
+=======
+white_btn = Button(16, bounce_time=0.5)
+#black_btn = Button(20)
+exit_btn = Button(20)
+#red_btn = Button(21)
+>>>>>>> d085d09e87adbbe5c7cd42fd13f65c71d5288b9f
 
 try:
     while True:
