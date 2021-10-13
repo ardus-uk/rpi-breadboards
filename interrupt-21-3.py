@@ -20,7 +20,7 @@ def stop_running():
     print("STOP (Black) pressed!\n")
     sys.exit()
 
-white_btn = Button(16)
+white_btn = Button(16, bounce_time = 2)
 #black_btn = Button(20)
 exit_btn = Button(20)
 #red_btn = Button(21)
