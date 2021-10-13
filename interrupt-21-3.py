@@ -8,19 +8,22 @@
 from gpiozero import Button 
 #import RPi.GPIO as GPIO  
 
-def action1():
-    print("Hello, world!\n")
+def actionw():
+    print("Hello, white!\n")
   
-def action2():
-    print("Goodbye, universe!\n")
+def actionb():
+    print("Hello, black!\n")
 
 
-btn = Button(16)
+white_btn = Button(16)
+black_btn = Button(20)
+red_btn = Button(21)
 
 try:
     while True:
-        btn.when_pressed = action1
-        btn.when_released = action2
+        white_btn.when_pressed = actionw
+        black_btn.when_pressed = actionb
+        #white_btn.when_released = action2
 except KeyboardInterrupt:
     print("\nEnding program run\n")
   
