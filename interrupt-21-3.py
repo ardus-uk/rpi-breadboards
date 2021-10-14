@@ -23,6 +23,10 @@ def actionw():
   
 def actionb():
     print("Hello, black!\n")
+    data = {}
+    data['name']="Peter"
+    with open(jcf,'w') as json_cred_file:
+        json.dump(data,json_cred_file)
 
 def stop_running():
     print("STOP (Red) pressed!\n")
