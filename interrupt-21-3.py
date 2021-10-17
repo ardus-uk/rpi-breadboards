@@ -32,10 +32,13 @@ def stop_running():
     print("STOP (Red) pressed!\n")
     sys.exit()
 
-white_btn = Button(16, bounce_time=0.05)
-black_btn = Button(20, bounce_time=0.05)
-red_btn = Button(21)
-
+red_btn = Button(26, bounce_time=0.05)
+black_btn = Button(19, bounce_time=0.05)
+white_btn = Button(13, bounce_time=0.05)
+green_btn = Button(6, bounce_time=0.05)
+yellow_btn = Button(5, bounce_time=0.05)
+blue_btn = Button(22, bounce_time=0.05)
+grey_btn = Button(27, bounce_time=0.05)
 
 try:
     while True:
