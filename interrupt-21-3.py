@@ -15,6 +15,12 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 jcf = os.path.join(script_dir,"config.json")
 
+pin = {}
+pin['red'] = 26
+btn = {}
+btn['red'] = Button(pin['red'], bounce_time=0.05)
+
+
 def actionw():
     with open(jcf) as json_cred_file:
         cred = json.load(json_cred_file)
@@ -32,7 +38,7 @@ def stop_running():
     print("STOP (Red) pressed!\n")
     sys.exit()
 
-red_btn = Button(26, bounce_time=0.05)
+# red_btn = Button(26, bounce_time=0.05)
 black_btn = Button(19, bounce_time=0.05)
 white_btn = Button(13, bounce_time=0.05)
 green_btn = Button(6, bounce_time=0.05)
@@ -44,7 +50,8 @@ try:
     while True:
         white_btn.when_pressed = actionw
         black_btn.when_pressed = actionb
-        red_btn.when_pressed = stop_running
+        btn['red'].when_pressed = stop_running
+       # red_btn.when_pressed = stop_running
         #white_btn.when_released = action2
 except KeyboardInterrupt:
     print("\nEnding program run\n")
