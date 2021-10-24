@@ -25,7 +25,7 @@ pin['blue'] = 22
 pin['grey'] = 27
 
 btn = {}
-for colour in pin.keys:
+for colour in pin.keys():
     btn[colour] = Button(pin[colour], bounce_time=0.05)
 
 
