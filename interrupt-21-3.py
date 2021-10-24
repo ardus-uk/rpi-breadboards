@@ -17,8 +17,16 @@ jcf = os.path.join(script_dir,"config.json")
 
 pin = {}
 pin['red'] = 26
+pin['black'] = 19
+pin['white'] = 13
+pin['green'] = 6
+pin['yellow'] = 5
+pin['blue'] = 22
+pin['grey'] = 27
+
 btn = {}
-btn['red'] = Button(pin['red'], bounce_time=0.05)
+for colour in pin.keys:
+    btn[colour] = Button(pin[colour], bounce_time=0.05)
 
 
 def actionw():
@@ -39,17 +47,17 @@ def stop_running():
     sys.exit()
 
 # red_btn = Button(26, bounce_time=0.05)
-black_btn = Button(19, bounce_time=0.05)
-white_btn = Button(13, bounce_time=0.05)
-green_btn = Button(6, bounce_time=0.05)
-yellow_btn = Button(5, bounce_time=0.05)
-blue_btn = Button(22, bounce_time=0.05)
-grey_btn = Button(27, bounce_time=0.05)
+#black_btn = Button(19, bounce_time=0.05)
+#white_btn = Button(13, bounce_time=0.05)
+#green_btn = Button(6, bounce_time=0.05)
+#yellow_btn = Button(5, bounce_time=0.05)
+#blue_btn = Button(22, bounce_time=0.05)
+#grey_btn = Button(27, bounce_time=0.05)
 
 try:
     while True:
-        white_btn.when_pressed = actionw
-        black_btn.when_pressed = actionb
+        btn['white'].when_pressed = actionw
+        btn['black'].when_pressed = actionb
         btn['red'].when_pressed = stop_running
        # red_btn.when_pressed = stop_running
         #white_btn.when_released = action2
