@@ -33,10 +33,11 @@ def stop_running():
     sys.exit()
 
 try:
-    while True:
-        btn_ops.when_pressed = pressed
-        btn_ops.when_released = released
-        btn_stop.when_pressed = stop_running
+    #while True:
+    btn_ops.when_pressed = pressed
+    btn_ops.when_released = released
+    btn_stop.when_pressed = stop_running
+    pause()
 except KeyboardInterrupt:
     print("...")
     print("Number of threads active: ",threading.active_count())
