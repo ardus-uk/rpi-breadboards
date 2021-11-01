@@ -36,7 +36,7 @@ try:
     while True:
         btn_ops.when_pressed = pressed
         btn_ops.when_released = released
-        btn_stop.when_pressed = stop_running()
+        btn_stop.when_pressed = stop_running
 except KeyboardInterrupt:
     print("Number of threads active: ",threading.active_count(),"\n")
     print("Ending program run\n")
