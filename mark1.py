@@ -38,7 +38,8 @@ try:
         btn_ops.when_released = released
         btn_stop.when_pressed = stop_running
 except KeyboardInterrupt:
-    print("Number of threads active: ",threading.active_count(),"\n")
-    print("Ending program run\n")
+    print("...")
+    print("Number of threads active: ",threading.active_count())
+    print("Ending program run")
     btn_ops.close()
     sys.exit()
