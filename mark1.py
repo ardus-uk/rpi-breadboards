@@ -1,8 +1,6 @@
-# Using button events to operate LEDs
+# Using button events to operate LEDs and examine threads
 # originally "flash_led_with_button.py" from MGB 1/11/21
-#
-# C&C Buttons
-#
+# This version Peter Normington 2021-11-01
 
 from gpiozero import LED, Button
 from signal import pause
@@ -47,7 +45,9 @@ try:
 except KeyboardInterrupt:
     print("...")
     print("Number of threads active: ",threading.active_count())
-    print("Threading: ",threading.enumerate())
+    print("Threads: ")
+    pp.pprint(threading.enumerate())
+    print("Closing the ops button")
     btn_ops.close()
     print("Number of threads active: ",threading.active_count())
     print("Threads: ")
