@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Using button events to operate LEDs and examine threads
 # originally "flash_led_with_button.py" from MGB 1/11/21
 # This version Peter Normington 2021-11-01
