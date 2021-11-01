@@ -11,9 +11,9 @@ from gpiozero import LED
 from gpiozero import Button
 from signal import pause
 
-red = LED(17)
-yel = LED(18)
-#grn = LED(19)
+red = LED(16)
+yel = LED(20)
+#grn = LED(21)
 
 def say_hello():
     print("Hello!")
