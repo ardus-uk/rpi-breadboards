@@ -13,31 +13,24 @@ from signal import pause
 
 red = LED(16)
 yel = LED(20)
-#grn = LED(21)
+grn = LED(21)
+
+def flash(btn,t_on,t_off,howmany):
+    btn.blink(on_time=t_on, off_time=t_off, n=howmany,background=True)
 
 def say_hello():
     print("Hello!")
-
-def flash_red():
-    say_hello()
-    red.blink(on_time=1, off_time=0.5, n=3,background=True)
+    flash(green,1,0.5,3)
 
 def say_goodbye():
     print("Goodbye!")
-    flash_yel()
-
-def flash_yel():
-    yel.blink(on_time=0.5, off_time=1, n=3,background=True)
-
-def flash_green():
-    pass
-    #replace pass with your code
+    flash(red,0.5,1,3)
 
 button = Button(26)
 
-button.when_pressed = flash_red
+button.when_pressed = say_hello
 button.when_released = say_goodbye
-button.when_held = flash_green
+#button.when_held = flash_green
 
 pause()    # This keep the main thread running
 button.close() 
