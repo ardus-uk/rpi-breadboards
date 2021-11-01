@@ -33,7 +33,7 @@ def flash_green():
     pass
     #replace pass with your code
 
-button = Button(2)
+button = Button(26)
 
 button.when_pressed = flash_red
 button.when_released = say_goodbye
