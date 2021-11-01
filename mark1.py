@@ -20,7 +20,7 @@ def flash(btn,t_on,t_off,howmany):
 
 def say_hello():
     print("Hello!")
-    flash(green,1,0.5,3)
+    flash(grn,1,0.5,3)
 
 def say_goodbye():
     print("Goodbye!")
