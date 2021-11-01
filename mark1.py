@@ -30,6 +30,7 @@ def released():
 def stop_running():
     print("STOP pressed!")
     print("Number of threads active: ",threading.active_count())
+    print("Threading: ",threading.enumerate())
     btn_ops.close()
     sys.exit()
 
@@ -42,7 +43,9 @@ try:
 except KeyboardInterrupt:
     print("...")
     print("Number of threads active: ",threading.active_count())
+    print("Threading: ",threading.enumerate())
     btn_ops.close()
     print("Number of threads active: ",threading.active_count())
+    print("Threading: ",threading.enumerate())
     print("Ending program run")
     sys.exit()
